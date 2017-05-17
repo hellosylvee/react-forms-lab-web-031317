@@ -9,6 +9,9 @@ export default class LoginForm extends React.Component {
       password: ""
     };
 
+    // <input id="test-username" type="text" value={this.state.username} onChange={this.usernameInput.bind(this)} />
+    // You can also at .bind(this) in render()
+
     this.usernameInput = this.usernameInput.bind(this)
     this.passwordInput = this.passwordInput.bind(this)
     this.formSubmission = this.formSubmission.bind(this)
@@ -29,6 +32,7 @@ export default class LoginForm extends React.Component {
 
   formSubmission(e){
     e.preventDefault();
+    // event.target.children()
     if (this.state.username !== "" && this.state.password !== ""){
       this.props.onSubmit()
     }
@@ -41,6 +45,7 @@ export default class LoginForm extends React.Component {
           <label>
             Username
             <input id="test-username" type="text" value={this.state.username} onChange={this.usernameInput} />
+
           </label>
         </div>
         <div>
